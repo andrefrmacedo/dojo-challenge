@@ -37,6 +37,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 5.0'
   gem 'rubocop-rails_config', '~> 0.4.3'
   gem 'faker', '~> 1.9'
+  gem 'webmock', '~> 3.5'
 end
 
 group :development do
@@ -51,3 +52,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'sidekiq', '~> 5.2'
+gem 'sidekiq-scheduler', '~> 3.0'
+gem 'httparty', '~> 0.16.4'

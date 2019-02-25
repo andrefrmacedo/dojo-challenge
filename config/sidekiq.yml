@@ -1,0 +1,4 @@
+:schedule:
+  import_data:
+    cron: '0 0 * * *'
+    class: DataImportJob
