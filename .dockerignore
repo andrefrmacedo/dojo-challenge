@@ -1,0 +1,12 @@
+.git/*
+.gitignore
+README.md
+.env
+docker-compose.yml
+.rspec
+/log
+/tmp
+/spec/tmp
+
+# Ignore Byebug command history file.
+.byebug_history

@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    volumes:
+      - .:/app
+    entrypoint: ./docker-entrypoint.sh
+    command: puma
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+      - redis
+    environment:
+      DATABASE_URL: postgres://postgres@db
+    tty: true
+    stdin_open: true
+
+  sidekiq:
+    build: .
+    volumes:
+      - .:/app
+    command: bundle exec sidekiq
+    depends_on:
+      - db
+      - redis
+  db:
+    image: postgres:11.2-alpine
+
+  redis:
+    image: redis:5.0-alpine
