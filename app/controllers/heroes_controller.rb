@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class HeroesController < ApplicationController
+class HeroesController < ApiController
   def index
     render json: Hero.all, status: :ok
   end

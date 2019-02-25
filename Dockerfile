@@ -1,6 +1,6 @@
 FROM ruby:2.6-alpine
 
-RUN apk add --update build-base postgresql-dev tzdata --no-cache bash
+RUN apk add --update build-base postgresql-dev tzdata --no-cache bash nodejs
 RUN gem install rails -v '5.2.2'
 
 WORKDIR /app

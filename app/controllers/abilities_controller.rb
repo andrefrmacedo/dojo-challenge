@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AbilitiesController < ApplicationController
+class AbilitiesController < ApiController
   def index
     if params[:hero_id]
       hero_abilities
