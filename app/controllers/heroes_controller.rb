@@ -2,7 +2,9 @@
 
 class HeroesController < ApiController
   def index
-    render json: Hero.all, status: :ok
+    params[:page] && params[:page][:number]
+    page = params[:page] && params[:page][:number] ? params[:page][:number] : 1
+    render json: Hero.page(page), status: :ok
   end
 
   def show
