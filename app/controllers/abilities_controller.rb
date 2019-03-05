@@ -5,7 +5,6 @@ class AbilitiesController < ApiController
     if params[:hero_id]
       hero_abilities
     else
-      params[:page] && params[:page][:number]
       page = params[:page] && params[:page][:number] ? params[:page][:number] : 1
       render json: Ability.page(page), status: :ok
     end
